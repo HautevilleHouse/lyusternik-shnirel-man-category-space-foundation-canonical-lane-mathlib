@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import LyusternikShnirelmanCategorySpaceFoundationCanonicalLaneLean.CategorySpaceFoundation
+import LyusternikShnirelmanCategorySpaceFoundationCanonicalLaneLean.CoveringDimensionPackage
+import LyusternikShnirelmanCategorySpaceFoundationCanonicalLaneLean.CupLengthPackage
+import LyusternikShnirelmanCategorySpaceFoundationCanonicalLaneLean.LSUpperBoundTheorem
+import LyusternikShnirelmanCategorySpaceFoundationCanonicalLaneLean.CohomologyCupProductBridge
+
+namespace HautevilleHouse
+namespace LyusternikShnirelmanCategorySpaceFoundationCanonicalLaneLean
+
+def ConstrainedLyusternikShnirelmanClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_lyusternik_shnirelman_endgame (A : AdmissibleClass) :
+    ConstrainedLyusternikShnirelmanClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end LyusternikShnirelmanCategorySpaceFoundationCanonicalLaneLean
+end HautevilleHouse
